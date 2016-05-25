@@ -82,7 +82,7 @@ then
    fi
 else
    set deviceC /dev/ttyS1
-   set deviceD /dev/ttyS2
+   set deviceD /dev/ttyS4
 fi
 
 if uorb start
@@ -407,9 +407,11 @@ then
         echo "No SPI hmc5883"
     fi
 
-    if mpu6000 -R 2 -T 20608 start
+    #if mpu6000 -R 2 -T 20608 start
+    if mpu6000 start
     then
-       echo "Found ICM-20608 internal"
+       #echo "Found ICM-20608 internal"
+       echo "Have SPI mpu6000"
     fi
 
     if mpu9250 -R 2 start

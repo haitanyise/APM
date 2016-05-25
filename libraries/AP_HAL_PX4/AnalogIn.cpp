@@ -270,7 +270,7 @@ void PX4AnalogIn::_timer_tick(void)
         // match the incoming channels to the currently active pins
         for (uint8_t i=0; i<ret/sizeof(buf_adc[0]); i++) {
 #if defined(CONFIG_ARCH_BOARD_PX4FMU_V2) || defined(CONFIG_ARCH_BOARD_PX4FMU_V4)
-            if (buf_adc[i].am_channel == 4) {
+            if (buf_adc[i].am_channel == 11) { // Power 
                 // record the Vcc value for later use in
                 // voltage_average_ratiometric()
                 _board_voltage = buf_adc[i].am_data * 6.6f / 4096;
